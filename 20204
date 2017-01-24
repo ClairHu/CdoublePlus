@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cassert>
+using namespace std;
+
+struct Node{
+ string val;
+ Node* next;
+};
+
+Node* sortPair (Node* p1, Node* p2){
+  assert(NULL != p1);
+  assert(NULL != p2);
+  Node *temp = NULL;
+  if( (p1->val) <= (p2->val) ){
+    temp = p1;
+    p2->next = NULL;
+    temp->next = p2;
+  }
+  else{
+    temp = p2;
+    p1->next = NULL;
+    temp->next = p1;
+  }
+  return temp;
+}
