@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+struct Node{
+ string val;
+ Node* next;
+};
+
+Node* makePairList (string s1, string s2){
+  Node *temp1;
+  Node *temp2;
+  if(s1 < s2){
+    temp1 = new Node;
+    temp2 = new Node;
+    temp1->val = s1;
+    temp2->val = s2;
+    temp2->next = NULL;
+    temp1->next = temp2;
+  }
+  else{
+    temp1 = new Node;
+    temp2 = new Node;
+    temp1->val = s2;
+    temp2->val = s1;
+    temp2->next = NULL;
+    temp1->next = temp2;
+  }
+  return temp1;
+}
+
