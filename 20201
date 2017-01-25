@@ -3,24 +3,32 @@
 #include <string>
 using namespace std;
 
-int main (int argc, char* argv[])
-{
- Node* s= NULL;
- string word;
- while(cin>>word)
- {
-  s=push(s,word);
- }
- while(NULL!=s)
- {
-  cout<<s->val<< endl;
-  s= s->next;
- }
- return 0;
-}
-
 struct Node{
 string val;
 Node* next;
 };
+
+Node* makeList (){
+ vector<string> tokens;
+ string s;
+ while(cin >> s){
+  tokens.push_back(s);
+ }
+  Node *output = NULL;
+  Node *temp = NULL;
+  for(int i = 0; i < tokens.size(); i++){
+  Node *temp1 = new Node;
+  temp1->next = NULL;
+  temp1->val = tokens.at(i);
+   if(NULL == output){
+    output = temp1;
+    temp = temp1;
+   }
+   else{
+    temp->next = temp1;
+    temp = temp->next;
+   }
+  }
+  return output;
+}
 
