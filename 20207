@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Node{
+ string val;
+ Node* next;
+};
+
+void printReverseRecursive (){
+  string s;
+  cin >> s;
+  if(cin.eof()){
+    return;
+  }
+  else{
+    printReverseRecursive ();
+    cout << s << endl;
+  }
+}
