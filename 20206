@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cassert>
+using namespace std;
+
+struct Node{
+ string val;
+ Node* next;
+};
+
+Node* append (Node* p1, Node* p2){
+  if(NULL == p1){
+    p1->next = p2;
+  }
+  else{
+    Node *temp = p1;
+    while(NULL != tail->next){
+      tail = tail->next;
+    }
+    tail->next = p2
+  }
+  return p1;
+  delete temp;
+}
